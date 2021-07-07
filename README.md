@@ -1,82 +1,68 @@
-# Repo Template
+# Expression Calculator
 
-This repository is meant to serve as a general template for how to set up new repositories in the. In general, setting up a new repository should take only a few minutes; use this repository as a way of finding example files, and use the following checklist to ensure that you've set up the repository correctly.
+This is an archived copy of a solution to an interview problem that I used to present to new hires.
 
-## Install
+The problem set:
 
-These instructions are basic; you can use any method to do this work. The important part is making sure that you follow the checklist below before publishing the repository.
+```csharp
+namespace ExpressionCalculator
+{
+    using System;
+    public class Calculator
+    {
+        /// <summary>
+        /// Calculates the result of the given <paramref name="expression"/>.
+        /// </summary>
+        /// <example>
+        ///     <code>
+        ///     int result1 = Calculate("17 * 9");
+        ///     int result2 = Calculate("15/6");
+        ///     int result3 = Calculate("2+ 4");
+        ///     </code>
+        /// </example>
+        /// <remarks>
+        ///   1) You do not need to implement the entire solution in one method.
+        ///   2) Feel free to run the program as you go to verify your results.
+        ///   3) There are many ways of solving this problem - we are not looking
+        ///      for anything extravagant. Feel free to ask questions.
+        /// </remarks>
+        /// <param name="expression">The expression to calculate.</param>
+        /// <returns>The result of the calculated expression.</returns>
+        public int Calculate(string expression)
+        {
+            throw new NotImplementedException("Implement");
+        }
+    }
 
-```sh
-# Let's make a new folder
-mkdir new-repo && cd new-repo
-# Start a Git instance and copy over template files.
-git init
-cp ../repo-template/* .
+    public class Program
+    {
+        private static void Main(string[] args)
+        {
+            var calculator = new Calculator();
+
+            Console.WriteLine("Enter an expression: ");
+            var exp = Console.ReadLine();
+            var result = calculator.Calculate(exp);
+            Console.WriteLine(result);
+            Console.ReadLine();
+        }
+    }
+}
 ```
 
-## Checklist
+I was looking for:
 
-Go through this checklist after creating your repository. It should only take a couple of minutes.
+* The ability to split a string
+* Convert string to a double
+* interpret a symbol as an operator (switch statement)
+* providing correct output
+* basic error handling (eg. divide by zero)
 
-### README
-
-- [ ] Update this `README.md` (Note, do last!).
-- [ ] Rename all instances of `<Replace Title>` in README to match the new repo title
-- [ ] Manually go through and edit the rest of the README.
-
-### Other Files
-
-- [ ] Copy `CODE_OF_CONDUCT.md` verbatim.
-- [ ] Copy `CONTRIBUTING.md` and ensure that you've added any repository-specific instructions. (Replace `<Replace Title>` again).
-- [ ] Should you have a `CHANGELOG.md`? Document your release process, if you plan on having one, in the `CONTRIBUTING.md` file.
-
-### Dotfiles
-
-- [ ] Do you need a `.gitignore` file?
-- [ ] Do you need an `.npmignore` file?
-
-### Licenses
-
-- [ ] Copy the MIT license from the example repo.
-- [ ] Have you added `MIT` as the license in the `package.json`?
-- [ ] If you made changes, were these reflected in the last section of the README?
-
-### GitHub Metadata
-
-- [ ] Have you added a short description to the repository?
-  - [ ] Is the description matched in the byline under the title in the README?
-- [ ] Have you added topics to the GitHub repository?
-  - [ ] Have you added these topics as keywords in the `package.json`?
-
-### `package.json`
-
-- [ ] Is the `author` field correct?
-- [ ] Have you added `keywords`?
-- [ ] Are the `bugs` and `homepage` fields correct?
-- [ ] Have you added tests? Are they matched, here?
-- [ ] Have you added a `lint` command?
-
-### Tests
-
-- [ ] Are there automated tests?
-- [ ] ...for the browser as well?
-- [ ] Are those reflected in CI?
-- [ ] Bonus points: Using CircleCI workflows to segment tests?
-- [ ] Extra bonus points: Are you cross-testing dependencies?
-
-### Benchmarks
-
-- [ ] Are there benchmarks?
-- [ ] Did you run the benchmarks before / after the change or PR?
-
-### Examples
-
-- [ ] Is there an example folder with usage examples?
-- [ ] For the browser as well?
+My solution is much more complex than necessary, but also shows basic data structures, recursion, loops, and light expressions.
 
 ## Contribute
 
-If you think this could be better, please [open an issue](https://github.com/risadams/<Replace Title>/issues/new)!
+If you think this could be better, please [open an issue](https://github.com/risadams/Expression-calculator/issues/new)!
 
 Please note that all interactions in this organization fall under our [Code of Conduct](CODE_OF_CONDUCT.md).
 
